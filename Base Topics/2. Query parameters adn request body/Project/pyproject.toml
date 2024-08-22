@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "a query-params project"
+version = "0.1.0"
+description = "A project which can help us to improve our knowledges in query-params and request bodies"
+authors = ["mrForza <rg_programmer@bk.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.112.1"
+uvicorn = "^0.30.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
