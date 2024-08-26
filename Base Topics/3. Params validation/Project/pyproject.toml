@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "params validation"
+version = "0.1.0"
+description = "A project which can help us to improve our knowledges in path/query params validation"
+authors = ["mrForza <rg_programmer@bk.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.112.1"
+uvicorn = "^0.30.6"
+passlib = "^1.7.4"
+bcrypt = "^4.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
