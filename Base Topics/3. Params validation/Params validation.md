@@ -18,6 +18,31 @@ print(get_type_hints(sys.modules[__name__], include_extras=True).get('a').__meta
 
 <br>
 
+Для того, чтобы задать дополнительные метаданные любым параметрам в контроллере, нужно в Annotated передать сответствующий класс параметра:
+Query, Path, Body и т.д.
+
+Пример:
+```python
+@user_router.get('/something/')
+async def get_something(
+    query_param: Annotated[str, Query(
+        alias='qparam-alias',
+        alias_priority=1,
+        validation_alias='Validation-Alias-For-Query-Param',
+        serialization_alias='Serialization-Alias-For-Query-Param',
+        title='Query Parameter',
+        description='A human-readable description for Query Parameter',
+        min_length=8,
+        max_length=64,
+        pattern=r'[0-9a-f]+',
+        strict=True,
+        examples=['aaf009f3f4', 'bbcbcbcbcbcbca', '010101101001'],
+        include_in_schema=True
+    ),] = 'af08b478ac'
+) -> str:
+    return f'{query_param}'
+```
+
 
 **Важные параметры конструкторов дочерних классов класса Params:**
 - `title` - Удобочитаемое название параметра в документации
